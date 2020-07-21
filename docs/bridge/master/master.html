@@ -18,192 +18,243 @@
 <li><a href="#_definitions">2. Definitions</a>
 <ul class="sectlevel2">
 <li><a href="#_assignedtopicpartitions">2.1. AssignedTopicPartitions</a></li>
-<li><a href="#_consumer">2.2. Consumer</a></li>
-<li><a href="#_consumerrecord">2.3. ConsumerRecord</a></li>
-<li><a href="#_consumerrecordlist">2.4. ConsumerRecordList</a></li>
-<li><a href="#_createdconsumer">2.5. CreatedConsumer</a></li>
-<li><a href="#_error">2.6. Error</a></li>
-<li><a href="#_offsetcommitseek">2.7. OffsetCommitSeek</a></li>
-<li><a href="#_offsetcommitseeklist">2.8. OffsetCommitSeekList</a></li>
-<li><a href="#_offsetrecordsent">2.9. OffsetRecordSent</a></li>
-<li><a href="#_offsetrecordsentlist">2.10. OffsetRecordSentList</a></li>
-<li><a href="#_partition">2.11. Partition</a></li>
-<li><a href="#_partitions">2.12. Partitions</a></li>
-<li><a href="#_producerrecord">2.13. ProducerRecord</a></li>
-<li><a href="#_producerrecordlist">2.14. ProducerRecordList</a></li>
-<li><a href="#_producerrecordtopartition">2.15. ProducerRecordToPartition</a></li>
-<li><a href="#_producerrecordtopartitionlist">2.16. ProducerRecordToPartitionList</a></li>
-<li><a href="#_subscribedtopiclist">2.17. SubscribedTopicList</a></li>
-<li><a href="#_topics">2.18. Topics</a></li>
+<li><a href="#_bridgeinfo">2.2. BridgeInfo</a></li>
+<li><a href="#_consumer">2.3. Consumer</a></li>
+<li><a href="#_consumerrecord">2.4. ConsumerRecord</a></li>
+<li><a href="#_consumerrecordlist">2.5. ConsumerRecordList</a></li>
+<li><a href="#_createdconsumer">2.6. CreatedConsumer</a></li>
+<li><a href="#_error">2.7. Error</a></li>
+<li><a href="#_offsetcommitseek">2.8. OffsetCommitSeek</a></li>
+<li><a href="#_offsetcommitseeklist">2.9. OffsetCommitSeekList</a></li>
+<li><a href="#_offsetrecordsent">2.10. OffsetRecordSent</a></li>
+<li><a href="#_offsetrecordsentlist">2.11. OffsetRecordSentList</a></li>
+<li><a href="#_partition">2.12. Partition</a></li>
+<li><a href="#_partitionmetadata">2.13. PartitionMetadata</a></li>
+<li><a href="#_partitions">2.14. Partitions</a></li>
+<li><a href="#_producerrecord">2.15. ProducerRecord</a></li>
+<li><a href="#_producerrecordlist">2.16. ProducerRecordList</a></li>
+<li><a href="#_producerrecordtopartition">2.17. ProducerRecordToPartition</a></li>
+<li><a href="#_producerrecordtopartitionlist">2.18. ProducerRecordToPartitionList</a></li>
+<li><a href="#_replica">2.19. Replica</a></li>
+<li><a href="#_subscribedtopiclist">2.20. SubscribedTopicList</a></li>
+<li><a href="#_topicmetadata">2.21. TopicMetadata</a></li>
+<li><a href="#_topics">2.22. Topics</a></li>
 </ul>
 </li>
 <li><a href="#_paths">3. Paths</a>
 <ul class="sectlevel2">
-<li><a href="#_createconsumer">3.1. POST /consumers/{groupid}</a>
+<li><a href="#_info">3.1. GET /</a>
 <ul class="sectlevel3">
 <li><a href="#description">3.1.1. Description</a></li>
-<li><a href="#parameters">3.1.2. Parameters</a></li>
-<li><a href="#responses">3.1.3. Responses</a></li>
-<li><a href="#consumes_2">3.1.4. Consumes</a></li>
-<li><a href="#produces_2">3.1.5. Produces</a></li>
-<li><a href="#tags_2">3.1.6. Tags</a></li>
-<li><a href="#example_http_request">3.1.7. Example HTTP request</a></li>
-<li><a href="#example_http_response">3.1.8. Example HTTP response</a></li>
+<li><a href="#responses">3.1.2. Responses</a></li>
+<li><a href="#produces_2">3.1.3. Produces</a></li>
+<li><a href="#example_http_response">3.1.4. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_deleteconsumer">3.2. DELETE /consumers/{groupid}/instances/{name}</a>
+<li><a href="#_createconsumer">3.2. POST /consumers/{groupid}</a>
 <ul class="sectlevel3">
 <li><a href="#description_2">3.2.1. Description</a></li>
-<li><a href="#parameters_2">3.2.2. Parameters</a></li>
+<li><a href="#parameters">3.2.2. Parameters</a></li>
 <li><a href="#responses_2">3.2.3. Responses</a></li>
-<li><a href="#consumes_3">3.2.4. Consumes</a></li>
+<li><a href="#consumes_2">3.2.4. Consumes</a></li>
 <li><a href="#produces_3">3.2.5. Produces</a></li>
-<li><a href="#tags_3">3.2.6. Tags</a></li>
-<li><a href="#example_http_response_2">3.2.7. Example HTTP response</a></li>
+<li><a href="#tags_2">3.2.6. Tags</a></li>
+<li><a href="#example_http_request">3.2.7. Example HTTP request</a></li>
+<li><a href="#example_http_response_2">3.2.8. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_assign">3.3. POST /consumers/{groupid}/instances/{name}/assignments</a>
+<li><a href="#_deleteconsumer">3.3. DELETE /consumers/{groupid}/instances/{name}</a>
 <ul class="sectlevel3">
 <li><a href="#description_3">3.3.1. Description</a></li>
-<li><a href="#parameters_3">3.3.2. Parameters</a></li>
+<li><a href="#parameters_2">3.3.2. Parameters</a></li>
 <li><a href="#responses_3">3.3.3. Responses</a></li>
-<li><a href="#consumes_4">3.3.4. Consumes</a></li>
+<li><a href="#consumes_3">3.3.4. Consumes</a></li>
 <li><a href="#produces_4">3.3.5. Produces</a></li>
-<li><a href="#tags_4">3.3.6. Tags</a></li>
-<li><a href="#example_http_request_2">3.3.7. Example HTTP request</a></li>
-<li><a href="#example_http_response_3">3.3.8. Example HTTP response</a></li>
+<li><a href="#tags_3">3.3.6. Tags</a></li>
+<li><a href="#example_http_response_3">3.3.7. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_commit">3.4. POST /consumers/{groupid}/instances/{name}/offsets</a>
+<li><a href="#_assign">3.4. POST /consumers/{groupid}/instances/{name}/assignments</a>
 <ul class="sectlevel3">
 <li><a href="#description_4">3.4.1. Description</a></li>
-<li><a href="#parameters_4">3.4.2. Parameters</a></li>
+<li><a href="#parameters_3">3.4.2. Parameters</a></li>
 <li><a href="#responses_4">3.4.3. Responses</a></li>
-<li><a href="#consumes_5">3.4.4. Consumes</a></li>
+<li><a href="#consumes_4">3.4.4. Consumes</a></li>
 <li><a href="#produces_5">3.4.5. Produces</a></li>
-<li><a href="#tags_5">3.4.6. Tags</a></li>
-<li><a href="#example_http_request_3">3.4.7. Example HTTP request</a></li>
+<li><a href="#tags_4">3.4.6. Tags</a></li>
+<li><a href="#example_http_request_2">3.4.7. Example HTTP request</a></li>
 <li><a href="#example_http_response_4">3.4.8. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_seek">3.5. POST /consumers/{groupid}/instances/{name}/positions</a>
+<li><a href="#_commit">3.5. POST /consumers/{groupid}/instances/{name}/offsets</a>
 <ul class="sectlevel3">
 <li><a href="#description_5">3.5.1. Description</a></li>
-<li><a href="#parameters_5">3.5.2. Parameters</a></li>
+<li><a href="#parameters_4">3.5.2. Parameters</a></li>
 <li><a href="#responses_5">3.5.3. Responses</a></li>
-<li><a href="#consumes_6">3.5.4. Consumes</a></li>
+<li><a href="#consumes_5">3.5.4. Consumes</a></li>
 <li><a href="#produces_6">3.5.5. Produces</a></li>
-<li><a href="#tags_6">3.5.6. Tags</a></li>
-<li><a href="#example_http_request_4">3.5.7. Example HTTP request</a></li>
+<li><a href="#tags_5">3.5.6. Tags</a></li>
+<li><a href="#example_http_request_3">3.5.7. Example HTTP request</a></li>
 <li><a href="#example_http_response_5">3.5.8. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_seektobeginning">3.6. POST /consumers/{groupid}/instances/{name}/positions/beginning</a>
+<li><a href="#_seek">3.6. POST /consumers/{groupid}/instances/{name}/positions</a>
 <ul class="sectlevel3">
 <li><a href="#description_6">3.6.1. Description</a></li>
-<li><a href="#parameters_6">3.6.2. Parameters</a></li>
+<li><a href="#parameters_5">3.6.2. Parameters</a></li>
 <li><a href="#responses_6">3.6.3. Responses</a></li>
-<li><a href="#consumes_7">3.6.4. Consumes</a></li>
+<li><a href="#consumes_6">3.6.4. Consumes</a></li>
 <li><a href="#produces_7">3.6.5. Produces</a></li>
-<li><a href="#tags_7">3.6.6. Tags</a></li>
-<li><a href="#example_http_request_5">3.6.7. Example HTTP request</a></li>
+<li><a href="#tags_6">3.6.6. Tags</a></li>
+<li><a href="#example_http_request_4">3.6.7. Example HTTP request</a></li>
 <li><a href="#example_http_response_6">3.6.8. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_seektoend">3.7. POST /consumers/{groupid}/instances/{name}/positions/end</a>
+<li><a href="#_seektobeginning">3.7. POST /consumers/{groupid}/instances/{name}/positions/beginning</a>
 <ul class="sectlevel3">
 <li><a href="#description_7">3.7.1. Description</a></li>
-<li><a href="#parameters_7">3.7.2. Parameters</a></li>
+<li><a href="#parameters_6">3.7.2. Parameters</a></li>
 <li><a href="#responses_7">3.7.3. Responses</a></li>
-<li><a href="#consumes_8">3.7.4. Consumes</a></li>
+<li><a href="#consumes_7">3.7.4. Consumes</a></li>
 <li><a href="#produces_8">3.7.5. Produces</a></li>
-<li><a href="#tags_8">3.7.6. Tags</a></li>
-<li><a href="#example_http_request_6">3.7.7. Example HTTP request</a></li>
+<li><a href="#tags_7">3.7.6. Tags</a></li>
+<li><a href="#example_http_request_5">3.7.7. Example HTTP request</a></li>
 <li><a href="#example_http_response_7">3.7.8. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_poll">3.8. GET /consumers/{groupid}/instances/{name}/records</a>
+<li><a href="#_seektoend">3.8. POST /consumers/{groupid}/instances/{name}/positions/end</a>
 <ul class="sectlevel3">
 <li><a href="#description_8">3.8.1. Description</a></li>
-<li><a href="#parameters_8">3.8.2. Parameters</a></li>
+<li><a href="#parameters_7">3.8.2. Parameters</a></li>
 <li><a href="#responses_8">3.8.3. Responses</a></li>
-<li><a href="#produces_9">3.8.4. Produces</a></li>
-<li><a href="#tags_9">3.8.5. Tags</a></li>
-<li><a href="#example_http_response_8">3.8.6. Example HTTP response</a></li>
+<li><a href="#consumes_8">3.8.4. Consumes</a></li>
+<li><a href="#produces_9">3.8.5. Produces</a></li>
+<li><a href="#tags_8">3.8.6. Tags</a></li>
+<li><a href="#example_http_request_6">3.8.7. Example HTTP request</a></li>
+<li><a href="#example_http_response_8">3.8.8. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_subscribe">3.9. POST /consumers/{groupid}/instances/{name}/subscription</a>
+<li><a href="#_poll">3.9. GET /consumers/{groupid}/instances/{name}/records</a>
 <ul class="sectlevel3">
 <li><a href="#description_9">3.9.1. Description</a></li>
-<li><a href="#parameters_9">3.9.2. Parameters</a></li>
+<li><a href="#parameters_8">3.9.2. Parameters</a></li>
 <li><a href="#responses_9">3.9.3. Responses</a></li>
-<li><a href="#consumes_9">3.9.4. Consumes</a></li>
-<li><a href="#produces_10">3.9.5. Produces</a></li>
-<li><a href="#tags_10">3.9.6. Tags</a></li>
-<li><a href="#example_http_request_7">3.9.7. Example HTTP request</a></li>
-<li><a href="#example_http_response_9">3.9.8. Example HTTP response</a></li>
+<li><a href="#produces_10">3.9.4. Produces</a></li>
+<li><a href="#tags_9">3.9.5. Tags</a></li>
+<li><a href="#example_http_response_9">3.9.6. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_listsubscriptions">3.10. GET /consumers/{groupid}/instances/{name}/subscription</a>
+<li><a href="#_subscribe">3.10. POST /consumers/{groupid}/instances/{name}/subscription</a>
 <ul class="sectlevel3">
 <li><a href="#description_10">3.10.1. Description</a></li>
-<li><a href="#parameters_10">3.10.2. Parameters</a></li>
+<li><a href="#parameters_9">3.10.2. Parameters</a></li>
 <li><a href="#responses_10">3.10.3. Responses</a></li>
-<li><a href="#produces_11">3.10.4. Produces</a></li>
-<li><a href="#tags_11">3.10.5. Tags</a></li>
-<li><a href="#example_http_response_10">3.10.6. Example HTTP response</a></li>
+<li><a href="#consumes_9">3.10.4. Consumes</a></li>
+<li><a href="#produces_11">3.10.5. Produces</a></li>
+<li><a href="#tags_10">3.10.6. Tags</a></li>
+<li><a href="#example_http_request_7">3.10.7. Example HTTP request</a></li>
+<li><a href="#example_http_response_10">3.10.8. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_unsubscribe">3.11. DELETE /consumers/{groupid}/instances/{name}/subscription</a>
+<li><a href="#_listsubscriptions">3.11. GET /consumers/{groupid}/instances/{name}/subscription</a>
 <ul class="sectlevel3">
 <li><a href="#description_11">3.11.1. Description</a></li>
-<li><a href="#parameters_11">3.11.2. Parameters</a></li>
+<li><a href="#parameters_10">3.11.2. Parameters</a></li>
 <li><a href="#responses_11">3.11.3. Responses</a></li>
-<li><a href="#tags_12">3.11.4. Tags</a></li>
-<li><a href="#example_http_response_11">3.11.5. Example HTTP response</a></li>
+<li><a href="#produces_12">3.11.4. Produces</a></li>
+<li><a href="#tags_11">3.11.5. Tags</a></li>
+<li><a href="#example_http_response_11">3.11.6. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_healthy">3.12. GET /healthy</a>
+<li><a href="#_unsubscribe">3.12. DELETE /consumers/{groupid}/instances/{name}/subscription</a>
 <ul class="sectlevel3">
 <li><a href="#description_12">3.12.1. Description</a></li>
-<li><a href="#responses_12">3.12.2. Responses</a></li>
+<li><a href="#parameters_11">3.12.2. Parameters</a></li>
+<li><a href="#responses_12">3.12.3. Responses</a></li>
+<li><a href="#tags_12">3.12.4. Tags</a></li>
+<li><a href="#example_http_response_12">3.12.5. Example HTTP response</a></li>
 </ul>
 </li>
-<li><a href="#_openapi">3.13. GET /openapi</a>
+<li><a href="#_healthy">3.13. GET /healthy</a>
 <ul class="sectlevel3">
 <li><a href="#description_13">3.13.1. Description</a></li>
 <li><a href="#responses_13">3.13.2. Responses</a></li>
-<li><a href="#produces_12">3.13.3. Produces</a></li>
 </ul>
 </li>
-<li><a href="#_ready">3.14. GET /ready</a>
+<li><a href="#_openapi">3.14. GET /openapi</a>
 <ul class="sectlevel3">
 <li><a href="#description_14">3.14.1. Description</a></li>
 <li><a href="#responses_14">3.14.2. Responses</a></li>
+<li><a href="#produces_13">3.14.3. Produces</a></li>
 </ul>
 </li>
-<li><a href="#_send">3.15. POST /topics/{topicname}</a>
+<li><a href="#_ready">3.15. GET /ready</a>
 <ul class="sectlevel3">
 <li><a href="#description_15">3.15.1. Description</a></li>
-<li><a href="#parameters_12">3.15.2. Parameters</a></li>
-<li><a href="#responses_15">3.15.3. Responses</a></li>
-<li><a href="#consumes_10">3.15.4. Consumes</a></li>
-<li><a href="#produces_13">3.15.5. Produces</a></li>
-<li><a href="#tags_13">3.15.6. Tags</a></li>
-<li><a href="#example_http_request_8">3.15.7. Example HTTP request</a></li>
-<li><a href="#example_http_response_12">3.15.8. Example HTTP response</a></li>
+<li><a href="#responses_15">3.15.2. Responses</a></li>
 </ul>
 </li>
-<li><a href="#_sendtopartition">3.16. POST /topics/{topicname}/partitions/{partitionid}</a>
+<li><a href="#_listtopics">3.16. GET /topics</a>
 <ul class="sectlevel3">
 <li><a href="#description_16">3.16.1. Description</a></li>
-<li><a href="#parameters_13">3.16.2. Parameters</a></li>
-<li><a href="#responses_16">3.16.3. Responses</a></li>
-<li><a href="#consumes_11">3.16.4. Consumes</a></li>
-<li><a href="#produces_14">3.16.5. Produces</a></li>
-<li><a href="#tags_14">3.16.6. Tags</a></li>
-<li><a href="#example_http_request_9">3.16.7. Example HTTP request</a></li>
-<li><a href="#example_http_response_13">3.16.8. Example HTTP response</a></li>
+<li><a href="#responses_16">3.16.2. Responses</a></li>
+<li><a href="#produces_14">3.16.3. Produces</a></li>
+<li><a href="#tags_13">3.16.4. Tags</a></li>
+<li><a href="#example_http_response_13">3.16.5. Example HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_send">3.17. POST /topics/{topicname}</a>
+<ul class="sectlevel3">
+<li><a href="#description_17">3.17.1. Description</a></li>
+<li><a href="#parameters_12">3.17.2. Parameters</a></li>
+<li><a href="#responses_17">3.17.3. Responses</a></li>
+<li><a href="#consumes_10">3.17.4. Consumes</a></li>
+<li><a href="#produces_15">3.17.5. Produces</a></li>
+<li><a href="#tags_14">3.17.6. Tags</a></li>
+<li><a href="#example_http_request_8">3.17.7. Example HTTP request</a></li>
+<li><a href="#example_http_response_14">3.17.8. Example HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_gettopic">3.18. GET /topics/{topicname}</a>
+<ul class="sectlevel3">
+<li><a href="#description_18">3.18.1. Description</a></li>
+<li><a href="#parameters_13">3.18.2. Parameters</a></li>
+<li><a href="#responses_18">3.18.3. Responses</a></li>
+<li><a href="#produces_16">3.18.4. Produces</a></li>
+<li><a href="#tags_15">3.18.5. Tags</a></li>
+<li><a href="#example_http_response_15">3.18.6. Example HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_listpartitions">3.19. GET /topics/{topicname}/partitions</a>
+<ul class="sectlevel3">
+<li><a href="#description_19">3.19.1. Description</a></li>
+<li><a href="#parameters_14">3.19.2. Parameters</a></li>
+<li><a href="#responses_19">3.19.3. Responses</a></li>
+<li><a href="#produces_17">3.19.4. Produces</a></li>
+<li><a href="#tags_16">3.19.5. Tags</a></li>
+<li><a href="#example_http_response_16">3.19.6. Example HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_sendtopartition">3.20. POST /topics/{topicname}/partitions/{partitionid}</a>
+<ul class="sectlevel3">
+<li><a href="#description_20">3.20.1. Description</a></li>
+<li><a href="#parameters_15">3.20.2. Parameters</a></li>
+<li><a href="#responses_20">3.20.3. Responses</a></li>
+<li><a href="#consumes_11">3.20.4. Consumes</a></li>
+<li><a href="#produces_18">3.20.5. Produces</a></li>
+<li><a href="#tags_17">3.20.6. Tags</a></li>
+<li><a href="#example_http_request_9">3.20.7. Example HTTP request</a></li>
+<li><a href="#example_http_response_17">3.20.8. Example HTTP response</a></li>
+</ul>
+</li>
+<li><a href="#_getpartition">3.21. GET /topics/{topicname}/partitions/{partitionid}</a>
+<ul class="sectlevel3">
+<li><a href="#description_21">3.21.1. Description</a></li>
+<li><a href="#parameters_16">3.21.2. Parameters</a></li>
+<li><a href="#responses_21">3.21.3. Responses</a></li>
+<li><a href="#produces_19">3.21.4. Produces</a></li>
+<li><a href="#tags_18">3.21.5. Tags</a></li>
+<li><a href="#example_http_response_18">3.21.6. Example HTTP response</a></li>
 </ul>
 </li>
 </ul>
@@ -261,7 +312,7 @@
 <p>Seek : Seek operations that enable a consumer to begin receiving messages from a given offset position.</p>
 </li>
 <li>
-<p>Topics : Topic operations to send messages to a specified topic or topic partition. You can include message keys in requests.</p>
+<p>Topics : Topic operations to send messages to a specified topic or topic partition, optionally including message keys in requests. You can also retrieve topics and topic metadata.</p>
 </li>
 </ul>
 </div>
@@ -305,7 +356,36 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_consumer"><a class="link" href="#_consumer">2.2. Consumer</a></h3>
+<h3 id="_bridgeinfo"><a class="link" href="#_bridgeinfo">2.2. BridgeInfo</a></h3>
+<div class="paragraph">
+<p>Information about Kafka Bridge instance.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>bridge_version</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>string</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_consumer"><a class="link" href="#_consumer">2.3. Consumer</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -398,7 +478,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_consumerrecord"><a class="link" href="#_consumerrecord">2.3. ConsumerRecord</a></h3>
+<h3 id="_consumerrecord"><a class="link" href="#_consumerrecord">2.4. ConsumerRecord</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -460,13 +540,13 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_consumerrecordlist"><a class="link" href="#_consumerrecordlist">2.4. ConsumerRecordList</a></h3>
+<h3 id="_consumerrecordlist"><a class="link" href="#_consumerrecordlist">2.5. ConsumerRecordList</a></h3>
 <div class="paragraph">
 <p><em>Type</em> : &lt; <a href="#_consumerrecord">ConsumerRecord</a> &gt; array</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_createdconsumer"><a class="link" href="#_createdconsumer">2.5. CreatedConsumer</a></h3>
+<h3 id="_createdconsumer"><a class="link" href="#_createdconsumer">2.6. CreatedConsumer</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -509,7 +589,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_error"><a class="link" href="#_error">2.6. Error</a></h3>
+<h3 id="_error"><a class="link" href="#_error">2.7. Error</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -544,7 +624,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_offsetcommitseek"><a class="link" href="#_offsetcommitseek">2.7. OffsetCommitSeek</a></h3>
+<h3 id="_offsetcommitseek"><a class="link" href="#_offsetcommitseek">2.8. OffsetCommitSeek</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -588,7 +668,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_offsetcommitseeklist"><a class="link" href="#_offsetcommitseeklist">2.8. OffsetCommitSeekList</a></h3>
+<h3 id="_offsetcommitseeklist"><a class="link" href="#_offsetcommitseeklist">2.9. OffsetCommitSeekList</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -614,7 +694,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_offsetrecordsent"><a class="link" href="#_offsetrecordsent">2.9. OffsetRecordSent</a></h3>
+<h3 id="_offsetrecordsent"><a class="link" href="#_offsetrecordsent">2.10. OffsetRecordSent</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -649,7 +729,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_offsetrecordsentlist"><a class="link" href="#_offsetrecordsentlist">2.10. OffsetRecordSentList</a></h3>
+<h3 id="_offsetrecordsentlist"><a class="link" href="#_offsetrecordsentlist">2.11. OffsetRecordSentList</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -675,7 +755,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_partition"><a class="link" href="#_partition">2.11. Partition</a></h3>
+<h3 id="_partition"><a class="link" href="#_partition">2.12. Partition</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -710,7 +790,51 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_partitions"><a class="link" href="#_partitions">2.12. Partitions</a></h3>
+<h3 id="_partitionmetadata"><a class="link" href="#_partitionmetadata">2.13. PartitionMetadata</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>leader</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>integer (int32)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>partition</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>integer (int32)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>replicas</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>&lt; <a href="#_replica">Replica</a> &gt; array</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_partitions"><a class="link" href="#_partitions">2.14. Partitions</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -736,7 +860,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_producerrecord"><a class="link" href="#_producerrecord">2.13. ProducerRecord</a></h3>
+<h3 id="_producerrecord"><a class="link" href="#_producerrecord">2.15. ProducerRecord</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -762,7 +886,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_producerrecordlist"><a class="link" href="#_producerrecordlist">2.14. ProducerRecordList</a></h3>
+<h3 id="_producerrecordlist"><a class="link" href="#_producerrecordlist">2.16. ProducerRecordList</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -788,13 +912,13 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_producerrecordtopartition"><a class="link" href="#_producerrecordtopartition">2.15. ProducerRecordToPartition</a></h3>
+<h3 id="_producerrecordtopartition"><a class="link" href="#_producerrecordtopartition">2.17. ProducerRecordToPartition</a></h3>
 <div class="paragraph">
 <p><em>Type</em> : object</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_producerrecordtopartitionlist"><a class="link" href="#_producerrecordtopartitionlist">2.16. ProducerRecordToPartitionList</a></h3>
+<h3 id="_producerrecordtopartitionlist"><a class="link" href="#_producerrecordtopartitionlist">2.18. ProducerRecordToPartitionList</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -820,7 +944,51 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_subscribedtopiclist"><a class="link" href="#_subscribedtopiclist">2.17. SubscribedTopicList</a></h3>
+<h3 id="_replica"><a class="link" href="#_replica">2.19. Replica</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>broker</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>integer (int32)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>in_sync</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>boolean</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>leader</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>boolean</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_subscribedtopiclist"><a class="link" href="#_subscribedtopiclist">2.20. SubscribedTopicList</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 42.8571%;">
@@ -855,7 +1023,60 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_topics"><a class="link" href="#_topics">2.18. Topics</a></h3>
+<h3 id="_topicmetadata"><a class="link" href="#_topicmetadata">2.21. TopicMetadata</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>configs</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Per-topic configuration overrides</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>&lt; string, string &gt; map</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>name</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Name of the topic</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>string</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>partitions</strong><br>
+<em>optional</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>&lt; <a href="#_partitionmetadata">PartitionMetadata</a> &gt; array</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_topics"><a class="link" href="#_topics">2.22. Topics</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -901,15 +1122,77 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <h2 id="_paths"><a class="link" href="#_paths">3. Paths</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_createconsumer"><a class="link" href="#_createconsumer">3.1. POST /consumers/{groupid}</a></h3>
+<h3 id="_info"><a class="link" href="#_info">3.1. GET /</a></h3>
 <div class="sect3">
 <h4 id="description"><a class="link" href="#description">3.1.1. Description</a></h4>
+<div class="paragraph">
+<p>Retrieves information about the Kafka Bridge instance, in JSON format.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="responses"><a class="link" href="#responses">3.1.2. Responses</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>200</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Information about Kafka Bridge instance.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><a href="#_bridgeinfo">BridgeInfo</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="produces_2"><a class="link" href="#produces_2">3.1.3. Produces</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example_http_response"><a class="link" href="#example_http_response">3.1.4. Example HTTP response</a></h4>
+<div class="sect4">
+<h5 id="response_200"><a class="link" href="#response_200">Response 200</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
+  "bridge_version" : "0.16.0"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_createconsumer"><a class="link" href="#_createconsumer">3.2. POST /consumers/{groupid}</a></h3>
+<div class="sect3">
+<h4 id="description_2"><a class="link" href="#description_2">3.2.1. Description</a></h4>
 <div class="paragraph">
 <p>Creates a consumer instance in the given consumer group. You can optionally specify a consumer name and supported configuration options. It returns a base URI which must be used to construct URLs for subsequent requests against this consumer instance.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters"><a class="link" href="#parameters">3.1.2. Parameters</a></h4>
+<h4 id="parameters"><a class="link" href="#parameters">3.2.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -960,7 +1243,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses"><a class="link" href="#responses">3.1.3. Responses</a></h4>
+<h4 id="responses_2"><a class="link" href="#responses_2">3.2.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -1012,7 +1295,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_2"><a class="link" href="#consumes_2">3.1.4. Consumes</a></h4>
+<h4 id="consumes_2"><a class="link" href="#consumes_2">3.2.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1022,7 +1305,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_2"><a class="link" href="#produces_2">3.1.5. Produces</a></h4>
+<h4 id="produces_3"><a class="link" href="#produces_3">3.2.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1032,7 +1315,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_2"><a class="link" href="#tags_2">3.1.6. Tags</a></h4>
+<h4 id="tags_2"><a class="link" href="#tags_2">3.2.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1042,7 +1325,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request"><a class="link" href="#example_http_request">3.1.7. Example HTTP request</a></h4>
+<h4 id="example_http_request"><a class="link" href="#example_http_request">3.2.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body"><a class="link" href="#request_body">Request body</a></h5>
 <div class="listingblock">
@@ -1060,9 +1343,9 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response"><a class="link" href="#example_http_response">3.1.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_2"><a class="link" href="#example_http_response_2">3.2.8. Example HTTP response</a></h4>
 <div class="sect4">
-<h5 id="response_200"><a class="link" href="#response_200">Response 200</a></h5>
+<h5 id="response_200_2"><a class="link" href="#response_200_2">Response 200</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
@@ -1103,15 +1386,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deleteconsumer"><a class="link" href="#_deleteconsumer">3.2. DELETE /consumers/{groupid}/instances/{name}</a></h3>
+<h3 id="_deleteconsumer"><a class="link" href="#_deleteconsumer">3.3. DELETE /consumers/{groupid}/instances/{name}</a></h3>
 <div class="sect3">
-<h4 id="description_2"><a class="link" href="#description_2">3.2.1. Description</a></h4>
+<h4 id="description_3"><a class="link" href="#description_3">3.3.1. Description</a></h4>
 <div class="paragraph">
 <p>Deletes a specified consumer instance. The request for this operation MUST use the base URL (including the host and port) returned in the response from the <code>POST</code> request to <code>/consumers/{groupid}</code> that was used to create this consumer.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_2"><a class="link" href="#parameters_2">3.2.2. Parameters</a></h4>
+<h4 id="parameters_2"><a class="link" href="#parameters_2">3.3.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1152,7 +1435,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the consumer that you want to delete.</p>
+<p>Name of the consumer to delete.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -1162,7 +1445,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_2"><a class="link" href="#responses_2">3.2.3. Responses</a></h4>
+<h4 id="responses_3"><a class="link" href="#responses_3">3.3.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -1203,7 +1486,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_3"><a class="link" href="#consumes_3">3.2.4. Consumes</a></h4>
+<h4 id="consumes_3"><a class="link" href="#consumes_3">3.3.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1213,7 +1496,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_3"><a class="link" href="#produces_3">3.2.5. Produces</a></h4>
+<h4 id="produces_4"><a class="link" href="#produces_4">3.3.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1223,7 +1506,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_3"><a class="link" href="#tags_3">3.2.6. Tags</a></h4>
+<h4 id="tags_3"><a class="link" href="#tags_3">3.3.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1233,7 +1516,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_2"><a class="link" href="#example_http_response_2">3.2.7. Example HTTP response</a></h4>
+<h4 id="example_http_response_3"><a class="link" href="#example_http_response_3">3.3.7. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404"><a class="link" href="#response_404">Response 404</a></h5>
 <div class="listingblock">
@@ -1250,15 +1533,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_assign"><a class="link" href="#_assign">3.3. POST /consumers/{groupid}/instances/{name}/assignments</a></h3>
+<h3 id="_assign"><a class="link" href="#_assign">3.4. POST /consumers/{groupid}/instances/{name}/assignments</a></h3>
 <div class="sect3">
-<h4 id="description_3"><a class="link" href="#description_3">3.3.1. Description</a></h4>
+<h4 id="description_4"><a class="link" href="#description_4">3.4.1. Description</a></h4>
 <div class="paragraph">
 <p>Assigns one or more topic partitions to a consumer.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_3"><a class="link" href="#parameters_3">3.3.2. Parameters</a></h4>
+<h4 id="parameters_3"><a class="link" href="#parameters_3">3.4.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1299,7 +1582,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the consumer to which you want to assign topic partitions.</p>
+<p>Name of the consumer to assign topic partitions to.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -1324,7 +1607,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_3"><a class="link" href="#responses_3">3.3.3. Responses</a></h4>
+<h4 id="responses_4"><a class="link" href="#responses_4">3.4.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -1376,7 +1659,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_4"><a class="link" href="#consumes_4">3.3.4. Consumes</a></h4>
+<h4 id="consumes_4"><a class="link" href="#consumes_4">3.4.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1386,7 +1669,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_4"><a class="link" href="#produces_4">3.3.5. Produces</a></h4>
+<h4 id="produces_5"><a class="link" href="#produces_5">3.4.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1396,7 +1679,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_4"><a class="link" href="#tags_4">3.3.6. Tags</a></h4>
+<h4 id="tags_4"><a class="link" href="#tags_4">3.4.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1406,7 +1689,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_2"><a class="link" href="#example_http_request_2">3.3.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_2"><a class="link" href="#example_http_request_2">3.4.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_2"><a class="link" href="#request_body_2">Request body</a></h5>
 <div class="listingblock">
@@ -1425,7 +1708,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_3"><a class="link" href="#example_http_response_3">3.3.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_4"><a class="link" href="#example_http_response_4">3.4.8. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404_2"><a class="link" href="#response_404_2">Response 404</a></h5>
 <div class="listingblock">
@@ -1455,15 +1738,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_commit"><a class="link" href="#_commit">3.4. POST /consumers/{groupid}/instances/{name}/offsets</a></h3>
+<h3 id="_commit"><a class="link" href="#_commit">3.5. POST /consumers/{groupid}/instances/{name}/offsets</a></h3>
 <div class="sect3">
-<h4 id="description_4"><a class="link" href="#description_4">3.4.1. Description</a></h4>
+<h4 id="description_5"><a class="link" href="#description_5">3.5.1. Description</a></h4>
 <div class="paragraph">
 <p>Commits a list of consumer offsets. To commit offsets for all records fetched by the consumer, leave the request body empty.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_4"><a class="link" href="#parameters_4">3.4.2. Parameters</a></h4>
+<h4 id="parameters_4"><a class="link" href="#parameters_4">3.5.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1529,7 +1812,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_4"><a class="link" href="#responses_4">3.4.3. Responses</a></h4>
+<h4 id="responses_5"><a class="link" href="#responses_5">3.5.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -1570,7 +1853,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_5"><a class="link" href="#consumes_5">3.4.4. Consumes</a></h4>
+<h4 id="consumes_5"><a class="link" href="#consumes_5">3.5.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1580,7 +1863,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_5"><a class="link" href="#produces_5">3.4.5. Produces</a></h4>
+<h4 id="produces_6"><a class="link" href="#produces_6">3.5.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1590,7 +1873,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_5"><a class="link" href="#tags_5">3.4.6. Tags</a></h4>
+<h4 id="tags_5"><a class="link" href="#tags_5">3.5.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1600,7 +1883,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_3"><a class="link" href="#example_http_request_3">3.4.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_3"><a class="link" href="#example_http_request_3">3.5.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_3"><a class="link" href="#request_body_3">Request body</a></h5>
 <div class="listingblock">
@@ -1621,7 +1904,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_4"><a class="link" href="#example_http_response_4">3.4.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_5"><a class="link" href="#example_http_response_5">3.5.8. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404_3"><a class="link" href="#response_404_3">Response 404</a></h5>
 <div class="listingblock">
@@ -1638,15 +1921,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_seek"><a class="link" href="#_seek">3.5. POST /consumers/{groupid}/instances/{name}/positions</a></h3>
+<h3 id="_seek"><a class="link" href="#_seek">3.6. POST /consumers/{groupid}/instances/{name}/positions</a></h3>
 <div class="sect3">
-<h4 id="description_5"><a class="link" href="#description_5">3.5.1. Description</a></h4>
+<h4 id="description_6"><a class="link" href="#description_6">3.6.1. Description</a></h4>
 <div class="paragraph">
 <p>Configures a subscribed consumer to fetch offsets from a particular offset the next time it fetches a set of records from a given topic partition. This overrides the default fetch behavior for consumers. You can specify one or more topic partitions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_5"><a class="link" href="#parameters_5">3.5.2. Parameters</a></h4>
+<h4 id="parameters_5"><a class="link" href="#parameters_5">3.6.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1712,7 +1995,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_5"><a class="link" href="#responses_5">3.5.3. Responses</a></h4>
+<h4 id="responses_6"><a class="link" href="#responses_6">3.6.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -1753,7 +2036,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_6"><a class="link" href="#consumes_6">3.5.4. Consumes</a></h4>
+<h4 id="consumes_6"><a class="link" href="#consumes_6">3.6.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1763,7 +2046,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_6"><a class="link" href="#produces_6">3.5.5. Produces</a></h4>
+<h4 id="produces_7"><a class="link" href="#produces_7">3.6.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1773,7 +2056,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_6"><a class="link" href="#tags_6">3.5.6. Tags</a></h4>
+<h4 id="tags_6"><a class="link" href="#tags_6">3.6.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1786,7 +2069,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_4"><a class="link" href="#example_http_request_4">3.5.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_4"><a class="link" href="#example_http_request_4">3.6.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_4"><a class="link" href="#request_body_4">Request body</a></h5>
 <div class="listingblock">
@@ -1807,7 +2090,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_5"><a class="link" href="#example_http_response_5">3.5.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_6"><a class="link" href="#example_http_response_6">3.6.8. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404_4"><a class="link" href="#response_404_4">Response 404</a></h5>
 <div class="listingblock">
@@ -1824,15 +2107,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_seektobeginning"><a class="link" href="#_seektobeginning">3.6. POST /consumers/{groupid}/instances/{name}/positions/beginning</a></h3>
+<h3 id="_seektobeginning"><a class="link" href="#_seektobeginning">3.7. POST /consumers/{groupid}/instances/{name}/positions/beginning</a></h3>
 <div class="sect3">
-<h4 id="description_6"><a class="link" href="#description_6">3.6.1. Description</a></h4>
+<h4 id="description_7"><a class="link" href="#description_7">3.7.1. Description</a></h4>
 <div class="paragraph">
 <p>Configures a subscribed consumer to seek (and subsequently read from) the first offset in one or more given topic partitions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_6"><a class="link" href="#parameters_6">3.6.2. Parameters</a></h4>
+<h4 id="parameters_6"><a class="link" href="#parameters_6">3.7.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1898,7 +2181,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_6"><a class="link" href="#responses_6">3.6.3. Responses</a></h4>
+<h4 id="responses_7"><a class="link" href="#responses_7">3.7.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -1939,7 +2222,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_7"><a class="link" href="#consumes_7">3.6.4. Consumes</a></h4>
+<h4 id="consumes_7"><a class="link" href="#consumes_7">3.7.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1949,7 +2232,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_7"><a class="link" href="#produces_7">3.6.5. Produces</a></h4>
+<h4 id="produces_8"><a class="link" href="#produces_8">3.7.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1959,7 +2242,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_7"><a class="link" href="#tags_7">3.6.6. Tags</a></h4>
+<h4 id="tags_7"><a class="link" href="#tags_7">3.7.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1972,7 +2255,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_5"><a class="link" href="#example_http_request_5">3.6.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_5"><a class="link" href="#example_http_request_5">3.7.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_5"><a class="link" href="#request_body_5">Request body</a></h5>
 <div class="listingblock">
@@ -1991,7 +2274,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_6"><a class="link" href="#example_http_response_6">3.6.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_7"><a class="link" href="#example_http_response_7">3.7.8. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404_5"><a class="link" href="#response_404_5">Response 404</a></h5>
 <div class="listingblock">
@@ -2008,15 +2291,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_seektoend"><a class="link" href="#_seektoend">3.7. POST /consumers/{groupid}/instances/{name}/positions/end</a></h3>
+<h3 id="_seektoend"><a class="link" href="#_seektoend">3.8. POST /consumers/{groupid}/instances/{name}/positions/end</a></h3>
 <div class="sect3">
-<h4 id="description_7"><a class="link" href="#description_7">3.7.1. Description</a></h4>
+<h4 id="description_8"><a class="link" href="#description_8">3.8.1. Description</a></h4>
 <div class="paragraph">
 <p>Configures a subscribed consumer to seek (and subsequently read from) the offset at the end of one or more of the given topic partitions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_7"><a class="link" href="#parameters_7">3.7.2. Parameters</a></h4>
+<h4 id="parameters_7"><a class="link" href="#parameters_7">3.8.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2082,7 +2365,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_7"><a class="link" href="#responses_7">3.7.3. Responses</a></h4>
+<h4 id="responses_8"><a class="link" href="#responses_8">3.8.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -2123,7 +2406,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_8"><a class="link" href="#consumes_8">3.7.4. Consumes</a></h4>
+<h4 id="consumes_8"><a class="link" href="#consumes_8">3.8.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2133,7 +2416,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_8"><a class="link" href="#produces_8">3.7.5. Produces</a></h4>
+<h4 id="produces_9"><a class="link" href="#produces_9">3.8.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2143,7 +2426,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_8"><a class="link" href="#tags_8">3.7.6. Tags</a></h4>
+<h4 id="tags_8"><a class="link" href="#tags_8">3.8.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2156,7 +2439,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_6"><a class="link" href="#example_http_request_6">3.7.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_6"><a class="link" href="#example_http_request_6">3.8.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_6"><a class="link" href="#request_body_6">Request body</a></h5>
 <div class="listingblock">
@@ -2175,7 +2458,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_7"><a class="link" href="#example_http_response_7">3.7.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_8"><a class="link" href="#example_http_response_8">3.8.8. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404_6"><a class="link" href="#response_404_6">Response 404</a></h5>
 <div class="listingblock">
@@ -2192,15 +2475,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_poll"><a class="link" href="#_poll">3.8. GET /consumers/{groupid}/instances/{name}/records</a></h3>
+<h3 id="_poll"><a class="link" href="#_poll">3.9. GET /consumers/{groupid}/instances/{name}/records</a></h3>
 <div class="sect3">
-<h4 id="description_8"><a class="link" href="#description_8">3.8.1. Description</a></h4>
+<h4 id="description_9"><a class="link" href="#description_9">3.9.1. Description</a></h4>
 <div class="paragraph">
 <p>Retrieves records for a subscribed consumer, including message values, topics, and partitions. The request for this operation MUST use the base URL (including the host and port) returned in the response from the <code>POST</code> request to <code>/consumers/{groupid}</code> that was used to create this consumer.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_8"><a class="link" href="#parameters_8">3.8.2. Parameters</a></h4>
+<h4 id="parameters_8"><a class="link" href="#parameters_8">3.9.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2241,7 +2524,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the subscribed consumer for which you want to retrieve records.</p>
+<p>Name of the subscribed consumer to retrieve records from.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -2281,7 +2564,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_8"><a class="link" href="#responses_8">3.8.3. Responses</a></h4>
+<h4 id="responses_9"><a class="link" href="#responses_9">3.9.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -2344,7 +2627,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="produces_9"><a class="link" href="#produces_9">3.8.4. Produces</a></h4>
+<h4 id="produces_10"><a class="link" href="#produces_10">3.9.4. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2360,7 +2643,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_9"><a class="link" href="#tags_9">3.8.5. Tags</a></h4>
+<h4 id="tags_9"><a class="link" href="#tags_9">3.9.5. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2370,9 +2653,9 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_8"><a class="link" href="#example_http_response_8">3.8.6. Example HTTP response</a></h4>
+<h4 id="example_http_response_9"><a class="link" href="#example_http_response_9">3.9.6. Example HTTP response</a></h4>
 <div class="sect4">
-<h5 id="response_200_2"><a class="link" href="#response_200_2">Response 200</a></h5>
+<h5 id="response_200_3"><a class="link" href="#response_200_3">Response 200</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
@@ -2438,15 +2721,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_subscribe"><a class="link" href="#_subscribe">3.9. POST /consumers/{groupid}/instances/{name}/subscription</a></h3>
+<h3 id="_subscribe"><a class="link" href="#_subscribe">3.10. POST /consumers/{groupid}/instances/{name}/subscription</a></h3>
 <div class="sect3">
-<h4 id="description_9"><a class="link" href="#description_9">3.9.1. Description</a></h4>
+<h4 id="description_10"><a class="link" href="#description_10">3.10.1. Description</a></h4>
 <div class="paragraph">
 <p>Subscribes a consumer to one or more topics. You can describe the topics to which the consumer will subscribe in a list (of <code>Topics</code> type) or as a <code>topic_pattern</code> field. Each call replaces the subscriptions for the subscriber.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_9"><a class="link" href="#parameters_9">3.9.2. Parameters</a></h4>
+<h4 id="parameters_9"><a class="link" href="#parameters_9">3.10.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2487,7 +2770,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the consumer that you want to unsubscribe from topics.</p>
+<p>Name of the consumer to unsubscribe from topics.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -2512,7 +2795,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_9"><a class="link" href="#responses_9">3.9.3. Responses</a></h4>
+<h4 id="responses_10"><a class="link" href="#responses_10">3.10.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -2575,7 +2858,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_9"><a class="link" href="#consumes_9">3.9.4. Consumes</a></h4>
+<h4 id="consumes_9"><a class="link" href="#consumes_9">3.10.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2585,7 +2868,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_10"><a class="link" href="#produces_10">3.9.5. Produces</a></h4>
+<h4 id="produces_11"><a class="link" href="#produces_11">3.10.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2595,7 +2878,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_10"><a class="link" href="#tags_10">3.9.6. Tags</a></h4>
+<h4 id="tags_10"><a class="link" href="#tags_10">3.10.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2605,7 +2888,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_7"><a class="link" href="#example_http_request_7">3.9.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_7"><a class="link" href="#example_http_request_7">3.10.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_7"><a class="link" href="#request_body_7">Request body</a></h5>
 <div class="listingblock">
@@ -2618,7 +2901,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_9"><a class="link" href="#example_http_response_9">3.9.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_10"><a class="link" href="#example_http_response_10">3.10.8. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404_8"><a class="link" href="#response_404_8">Response 404</a></h5>
 <div class="listingblock">
@@ -2661,15 +2944,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_listsubscriptions"><a class="link" href="#_listsubscriptions">3.10. GET /consumers/{groupid}/instances/{name}/subscription</a></h3>
+<h3 id="_listsubscriptions"><a class="link" href="#_listsubscriptions">3.11. GET /consumers/{groupid}/instances/{name}/subscription</a></h3>
 <div class="sect3">
-<h4 id="description_10"><a class="link" href="#description_10">3.10.1. Description</a></h4>
+<h4 id="description_11"><a class="link" href="#description_11">3.11.1. Description</a></h4>
 <div class="paragraph">
 <p>Retrieves a list of the topics to which the consumer is subscribed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_10"><a class="link" href="#parameters_10">3.10.2. Parameters</a></h4>
+<h4 id="parameters_10"><a class="link" href="#parameters_10">3.11.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2710,7 +2993,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the consumer that you want to unsubscribe from topics.</p>
+<p>Name of the consumer to unsubscribe from topics.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -2720,7 +3003,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_10"><a class="link" href="#responses_10">3.10.3. Responses</a></h4>
+<h4 id="responses_11"><a class="link" href="#responses_11">3.11.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -2761,7 +3044,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="produces_11"><a class="link" href="#produces_11">3.10.4. Produces</a></h4>
+<h4 id="produces_12"><a class="link" href="#produces_12">3.11.4. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2771,7 +3054,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_11"><a class="link" href="#tags_11">3.10.5. Tags</a></h4>
+<h4 id="tags_11"><a class="link" href="#tags_11">3.11.5. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2781,9 +3064,9 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_10"><a class="link" href="#example_http_response_10">3.10.6. Example HTTP response</a></h4>
+<h4 id="example_http_response_11"><a class="link" href="#example_http_response_11">3.11.6. Example HTTP response</a></h4>
 <div class="sect4">
-<h5 id="response_200_3"><a class="link" href="#response_200_3">Response 200</a></h5>
+<h5 id="response_200_4"><a class="link" href="#response_200_4">Response 200</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
@@ -2813,15 +3096,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unsubscribe"><a class="link" href="#_unsubscribe">3.11. DELETE /consumers/{groupid}/instances/{name}/subscription</a></h3>
+<h3 id="_unsubscribe"><a class="link" href="#_unsubscribe">3.12. DELETE /consumers/{groupid}/instances/{name}/subscription</a></h3>
 <div class="sect3">
-<h4 id="description_11"><a class="link" href="#description_11">3.11.1. Description</a></h4>
+<h4 id="description_12"><a class="link" href="#description_12">3.12.1. Description</a></h4>
 <div class="paragraph">
 <p>Unsubscribes a consumer from all topics.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_11"><a class="link" href="#parameters_11">3.11.2. Parameters</a></h4>
+<h4 id="parameters_11"><a class="link" href="#parameters_11">3.12.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -2862,7 +3145,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the consumer that you want to unsubscribe from topics.</p>
+<p>Name of the consumer to unsubscribe from topics.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -2872,7 +3155,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_11"><a class="link" href="#responses_11">3.11.3. Responses</a></h4>
+<h4 id="responses_12"><a class="link" href="#responses_12">3.12.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -2913,7 +3196,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="tags_12"><a class="link" href="#tags_12">3.11.4. Tags</a></h4>
+<h4 id="tags_12"><a class="link" href="#tags_12">3.12.4. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2923,7 +3206,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_11"><a class="link" href="#example_http_response_11">3.11.5. Example HTTP response</a></h4>
+<h4 id="example_http_response_12"><a class="link" href="#example_http_response_12">3.12.5. Example HTTP response</a></h4>
 <div class="sect4">
 <h5 id="response_404_10"><a class="link" href="#response_404_10">Response 404</a></h5>
 <div class="listingblock">
@@ -2938,15 +3221,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_healthy"><a class="link" href="#_healthy">3.12. GET /healthy</a></h3>
+<h3 id="_healthy"><a class="link" href="#_healthy">3.13. GET /healthy</a></h3>
 <div class="sect3">
-<h4 id="description_12"><a class="link" href="#description_12">3.12.1. Description</a></h4>
+<h4 id="description_13"><a class="link" href="#description_13">3.13.1. Description</a></h4>
 <div class="paragraph">
 <p>Check if the bridge is running. This does not necessarily imply that it is ready to accept requests.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="responses_12"><a class="link" href="#responses_12">3.12.2. Responses</a></h4>
+<h4 id="responses_13"><a class="link" href="#responses_13">3.13.2. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -2977,15 +3260,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_openapi"><a class="link" href="#_openapi">3.13. GET /openapi</a></h3>
+<h3 id="_openapi"><a class="link" href="#_openapi">3.14. GET /openapi</a></h3>
 <div class="sect3">
-<h4 id="description_13"><a class="link" href="#description_13">3.13.1. Description</a></h4>
+<h4 id="description_14"><a class="link" href="#description_14">3.14.1. Description</a></h4>
 <div class="paragraph">
 <p>Retrieves the OpenAPI v2 specification in JSON format.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="responses_13"><a class="link" href="#responses_13">3.13.2. Responses</a></h4>
+<h4 id="responses_14"><a class="link" href="#responses_14">3.14.2. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -3015,7 +3298,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="produces_12"><a class="link" href="#produces_12">3.13.3. Produces</a></h4>
+<h4 id="produces_13"><a class="link" href="#produces_13">3.14.3. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3026,15 +3309,15 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ready"><a class="link" href="#_ready">3.14. GET /ready</a></h3>
+<h3 id="_ready"><a class="link" href="#_ready">3.15. GET /ready</a></h3>
 <div class="sect3">
-<h4 id="description_14"><a class="link" href="#description_14">3.14.1. Description</a></h4>
+<h4 id="description_15"><a class="link" href="#description_15">3.15.1. Description</a></h4>
 <div class="paragraph">
 <p>Check if the bridge is ready and can accept requests.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="responses_14"><a class="link" href="#responses_14">3.14.2. Responses</a></h4>
+<h4 id="responses_15"><a class="link" href="#responses_15">3.15.2. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -3065,15 +3348,87 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_send"><a class="link" href="#_send">3.15. POST /topics/{topicname}</a></h3>
+<h3 id="_listtopics"><a class="link" href="#_listtopics">3.16. GET /topics</a></h3>
 <div class="sect3">
-<h4 id="description_15"><a class="link" href="#description_15">3.15.1. Description</a></h4>
+<h4 id="description_16"><a class="link" href="#description_16">3.16.1. Description</a></h4>
+<div class="paragraph">
+<p>Retrieves a list of all topics.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="responses_16"><a class="link" href="#responses_16">3.16.2. Responses</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>200</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>List of topics.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>&lt; string &gt; array</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="produces_14"><a class="link" href="#produces_14">3.16.3. Produces</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/vnd.kafka.v2+json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tags_13"><a class="link" href="#tags_13">3.16.4. Tags</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example_http_response_13"><a class="link" href="#example_http_response_13">3.16.5. Example HTTP response</a></h4>
+<div class="sect4">
+<h5 id="response_200_5"><a class="link" href="#response_200_5">Response 200</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
+  "application/vnd.kafka.v2+json" : [ "topic1", "topic2" ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_send"><a class="link" href="#_send">3.17. POST /topics/{topicname}</a></h3>
+<div class="sect3">
+<h4 id="description_17"><a class="link" href="#description_17">3.17.1. Description</a></h4>
 <div class="paragraph">
 <p>Sends one or more records to a given topic, optionally specifying a partition, key, or both.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_12"><a class="link" href="#parameters_12">3.15.2. Parameters</a></h4>
+<h4 id="parameters_12"><a class="link" href="#parameters_12">3.17.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3099,7 +3454,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the topic to which you want to send records.</p>
+<p>Name of the topic to send records to or retrieve metadata from.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -3122,7 +3477,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_15"><a class="link" href="#responses_15">3.15.3. Responses</a></h4>
+<h4 id="responses_17"><a class="link" href="#responses_17">3.17.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -3174,7 +3529,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_10"><a class="link" href="#consumes_10">3.15.4. Consumes</a></h4>
+<h4 id="consumes_10"><a class="link" href="#consumes_10">3.17.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3187,7 +3542,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_13"><a class="link" href="#produces_13">3.15.5. Produces</a></h4>
+<h4 id="produces_15"><a class="link" href="#produces_15">3.17.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3197,7 +3552,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_13"><a class="link" href="#tags_13">3.15.6. Tags</a></h4>
+<h4 id="tags_14"><a class="link" href="#tags_14">3.17.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3210,7 +3565,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_8"><a class="link" href="#example_http_request_8">3.15.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_8"><a class="link" href="#example_http_request_8">3.17.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_8"><a class="link" href="#request_body_8">Request body</a></h5>
 <div class="listingblock">
@@ -3231,9 +3586,9 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_12"><a class="link" href="#example_http_response_12">3.15.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_14"><a class="link" href="#example_http_response_14">3.17.8. Example HTTP response</a></h4>
 <div class="sect4">
-<h5 id="response_200_4"><a class="link" href="#response_200_4">Response 200</a></h5>
+<h5 id="response_200_6"><a class="link" href="#response_200_6">Response 200</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
@@ -3282,15 +3637,310 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sendtopartition"><a class="link" href="#_sendtopartition">3.16. POST /topics/{topicname}/partitions/{partitionid}</a></h3>
+<h3 id="_gettopic"><a class="link" href="#_gettopic">3.18. GET /topics/{topicname}</a></h3>
 <div class="sect3">
-<h4 id="description_16"><a class="link" href="#description_16">3.16.1. Description</a></h4>
+<h4 id="description_18"><a class="link" href="#description_18">3.18.1. Description</a></h4>
+<div class="paragraph">
+<p>Retrieves the metadata about a given topic.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="parameters_13"><a class="link" href="#parameters_13">3.18.2. Parameters</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Path</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>topicname</strong><br>
+<em>required</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Name of the topic to send records to or retrieve metadata from.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>string</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="responses_18"><a class="link" href="#responses_18">3.18.3. Responses</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>200</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Topic metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><a href="#_topicmetadata">TopicMetadata</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="produces_16"><a class="link" href="#produces_16">3.18.4. Produces</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/vnd.kafka.v2+json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tags_15"><a class="link" href="#tags_15">3.18.5. Tags</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example_http_response_15"><a class="link" href="#example_http_response_15">3.18.6. Example HTTP response</a></h4>
+<div class="sect4">
+<h5 id="response_200_7"><a class="link" href="#response_200_7">Response 200</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
+  "application/vnd.kafka.v2+json" : {
+    "name" : "topic",
+    "offset" : 2,
+    "configs" : {
+      "cleanup.policy" : "compact"
+    },
+    "partitions" : [ {
+      "partition" : 1,
+      "leader" : 1,
+      "replicas" : [ {
+        "broker" : 1,
+        "leader" : true,
+        "in_sync" : true
+      }, {
+        "broker" : 2,
+        "leader" : false,
+        "in_sync" : true
+      } ]
+    }, {
+      "partition" : 2,
+      "leader" : 2,
+      "replicas" : [ {
+        "broker" : 1,
+        "leader" : false,
+        "in_sync" : true
+      }, {
+        "broker" : 2,
+        "leader" : true,
+        "in_sync" : true
+      } ]
+    } ]
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_listpartitions"><a class="link" href="#_listpartitions">3.19. GET /topics/{topicname}/partitions</a></h3>
+<div class="sect3">
+<h4 id="description_19"><a class="link" href="#description_19">3.19.1. Description</a></h4>
+<div class="paragraph">
+<p>Retrieves a list of partitions for the topic.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="parameters_14"><a class="link" href="#parameters_14">3.19.2. Parameters</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Path</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>topicname</strong><br>
+<em>required</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Name of the topic to send records to or retrieve metadata from.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>string</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="responses_19"><a class="link" href="#responses_19">3.19.3. Responses</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>200</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>List of partitions</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>&lt; <a href="#_partitionmetadata">PartitionMetadata</a> &gt; array</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>404</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The specified topic was not found.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><a href="#_error">Error</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="produces_17"><a class="link" href="#produces_17">3.19.4. Produces</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/vnd.kafka.v2+json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tags_16"><a class="link" href="#tags_16">3.19.5. Tags</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example_http_response_16"><a class="link" href="#example_http_response_16">3.19.6. Example HTTP response</a></h4>
+<div class="sect4">
+<h5 id="response_200_8"><a class="link" href="#response_200_8">Response 200</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
+  "application/vnd.kafka.v2+json" : [ {
+    "partition" : 1,
+    "leader" : 1,
+    "replicas" : [ {
+      "broker" : 1,
+      "leader" : true,
+      "in_sync" : true
+    }, {
+      "broker" : 2,
+      "leader" : false,
+      "in_sync" : true
+    } ]
+  }, {
+    "partition" : 2,
+    "leader" : 2,
+    "replicas" : [ {
+      "broker" : 1,
+      "leader" : false,
+      "in_sync" : true
+    }, {
+      "broker" : 2,
+      "leader" : true,
+      "in_sync" : true
+    } ]
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response_404_12"><a class="link" href="#response_404_12">Response 404</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
+  "application/vnd.kafka.v2+json" : {
+    "error_code" : 404,
+    "message" : "The specified topic was not found."
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sendtopartition"><a class="link" href="#_sendtopartition">3.20. POST /topics/{topicname}/partitions/{partitionid}</a></h3>
+<div class="sect3">
+<h4 id="description_20"><a class="link" href="#description_20">3.20.1. Description</a></h4>
 <div class="paragraph">
 <p>Sends one or more records to a given topic partition, optionally specifying a key.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="parameters_13"><a class="link" href="#parameters_13">3.16.2. Parameters</a></h4>
+<h4 id="parameters_15"><a class="link" href="#parameters_15">3.20.2. Parameters</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -3316,7 +3966,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>ID of the partition to which you want to send records.</p>
+<p>ID of the partition to send records to or retrieve metadata from.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>integer</p>
@@ -3331,7 +3981,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 <em>required</em></p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
-<p>Name of the topic containing the partition to which you want to send records.</p>
+<p>Name of the topic to send records to or retrieve metadata from.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
 <p>string</p>
@@ -3356,7 +4006,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="responses_16"><a class="link" href="#responses_16">3.16.3. Responses</a></h4>
+<h4 id="responses_20"><a class="link" href="#responses_20">3.20.3. Responses</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 10%;">
@@ -3408,7 +4058,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="consumes_11"><a class="link" href="#consumes_11">3.16.4. Consumes</a></h4>
+<h4 id="consumes_11"><a class="link" href="#consumes_11">3.20.4. Consumes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3421,7 +4071,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="produces_14"><a class="link" href="#produces_14">3.16.5. Produces</a></h4>
+<h4 id="produces_18"><a class="link" href="#produces_18">3.20.5. Produces</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3431,7 +4081,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tags_14"><a class="link" href="#tags_14">3.16.6. Tags</a></h4>
+<h4 id="tags_17"><a class="link" href="#tags_17">3.20.6. Tags</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3444,7 +4094,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_request_9"><a class="link" href="#example_http_request_9">3.16.7. Example HTTP request</a></h4>
+<h4 id="example_http_request_9"><a class="link" href="#example_http_request_9">3.20.7. Example HTTP request</a></h4>
 <div class="sect4">
 <h5 id="request_body_9"><a class="link" href="#request_body_9">Request body</a></h5>
 <div class="listingblock">
@@ -3462,9 +4112,9 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example_http_response_13"><a class="link" href="#example_http_response_13">3.16.8. Example HTTP response</a></h4>
+<h4 id="example_http_response_17"><a class="link" href="#example_http_response_17">3.20.8. Example HTTP response</a></h4>
 <div class="sect4">
-<h5 id="response_200_5"><a class="link" href="#response_200_5">Response 200</a></h5>
+<h5 id="response_200_9"><a class="link" href="#response_200_9">Response 200</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
@@ -3485,7 +4135,7 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="response_404_12"><a class="link" href="#response_404_12">Response 404</a></h5>
+<h5 id="response_404_13"><a class="link" href="#response_404_13">Response 404</a></h5>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
@@ -3509,8 +4159,167 @@ If set to <code>latest</code>, messages are read from the latest offset.</p>
 }</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getpartition"><a class="link" href="#_getpartition">3.21. GET /topics/{topicname}/partitions/{partitionid}</a></h3>
+<div class="sect3">
+<h4 id="description_21"><a class="link" href="#description_21">3.21.1. Description</a></h4>
 <div class="paragraph">
-<p><em>Revised on 2020-04-02 07:38:17 UTC</em></p>
+<p>Retrieves partition metadata for the topic partition.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="parameters_16"><a class="link" href="#parameters_16">3.21.2. Parameters</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Path</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>partitionid</strong><br>
+<em>required</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>ID of the partition to send records to or retrieve metadata from.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>integer</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>Path</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>topicname</strong><br>
+<em>required</em></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Name of the topic to send records to or retrieve metadata from.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>string</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="responses_21"><a class="link" href="#responses_21">3.21.3. Responses</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>200</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>Partition metadata</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><a href="#_partitionmetadata">PartitionMetadata</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><strong>404</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p>The specified topic partition was not found.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><a href="#_error">Error</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="produces_19"><a class="link" href="#produces_19">3.21.4. Produces</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/vnd.kafka.v2+json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tags_18"><a class="link" href="#tags_18">3.21.5. Tags</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Topics</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example_http_response_18"><a class="link" href="#example_http_response_18">3.21.6. Example HTTP response</a></h4>
+<div class="sect4">
+<h5 id="response_200_10"><a class="link" href="#response_200_10">Response 200</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
+  "application/vnd.kafka.v2+json" : {
+    "partition" : 1,
+    "leader" : 1,
+    "replicas" : [ {
+      "broker" : 1,
+      "leader" : true,
+      "in_sync" : true
+    }, {
+      "broker" : 2,
+      "leader" : false,
+      "in_sync" : true
+    } ]
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="response_404_14"><a class="link" href="#response_404_14">Response 404</a></h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="json" class="language-json hljs">{
+  "application/vnd.kafka.v2+json" : {
+    "error_code" : 404,
+    "message" : "The specified topic partition was not found."
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Revised on 2020-07-14 06:47:17 UTC</em></p>
 </div>
 </div>
 </div>

@@ -13,7 +13,7 @@ body {
   line-height: 1.5rem;
 }
 
-body:not(.homepage){
+body:not(.homepage):not(.connectors){
   div.site-content {
     padding-bottom: 6rem;
   }
@@ -90,12 +90,6 @@ p {
   margin: 0 0 1.5rem;
 }
 
-p code,
-li code {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-}
-
 a, a i {
   line-height: 1.5rem;
   font-weight: 400;
@@ -132,11 +126,38 @@ input[type="submit"] {
   }
 }
 
+code {
+  background-color: #F0F0F0;
+  padding: 0 5px;
+  color: inherit;
+}
+
+p code,
+li code {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+a > code,
+table code,
+dt code {
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+}
+
+dt {
+  font-weight: 600;
+}
+
+em {
+  color: inherit;
+}
+
 hr {
   border-width: 1px;
   border-color: $dark-blue;
 }
-
 
 ul {
   padding-inline-start: 20px;
@@ -147,8 +168,17 @@ ul {
 }
 
 table {
+  caption {
+    font-size: 1.3rem;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
   thead th {
     background-color: $dark-blue;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
   }
 }
 
@@ -274,6 +304,10 @@ blockquote::after{
 
 .text-caps {
   text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
 }
 
 .hide-mobile {
@@ -421,4 +455,14 @@ blockquote::after{
       font-size: 2.5rem;
     }
   }
+}
+
+.title {
+  font-weight: 600;
+}
+
+.paragraph > .title {
+  font-size: 1.3rem;
+  text-align: left;
+  margin-bottom: 12px; 
 }
